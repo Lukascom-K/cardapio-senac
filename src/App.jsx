@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header.jsx";
+import Cadastro from "./pages/Cadastro.jsx";
 
 function App() {
     const [telaAtiva, setTelaAtiva] = useState('cadastro')
@@ -8,7 +9,7 @@ function App() {
         <div>
             <Header telaAtiva={telaAtiva} setTelaAtiva={setTelaAtiva}></Header>
             <main>
-                <p>Tela:{telaAtiva}</p>
+                {telaAtiva === 'cadastro' && <Cadastro />}
             </main>
         </div>
     )

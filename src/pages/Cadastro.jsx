@@ -5,6 +5,8 @@ export default function Cadastro() {
     const {pratos, setPratos } = useContext(CardapioContext)
     const [form, setForm] = useState({nome: '',preco:'', tipo: 'Principal', caracteristicas: []})
 
+    const [editandoId, setEditandoId] = useState(null)
+
     const total = pratos.length
     const principais = pratos.filter(p => p.tipo === 'Principal').length
     const veganos = pratos.filter(p => p.caracteristicas.includes('Vegano')).length
@@ -58,10 +60,15 @@ export default function Cadastro() {
                 </div>
 
                 <button onClick={() => {
-                    setPratos([...pratos, { ...form, id: Date.now() }])
+                    if (editandoId !== null) {
+                        setPratos(pratos.map(p => p.id === editandoId ? { ...form, id: editandoId } : p))
+                        setEditandoId(null)
+                    } else {
+                        setPratos([...pratos, { ...form, id: Date.now() }])
+                    }
                     setForm({ nome: '', preco: '', tipo: 'Principal', caracteristicas: [] })
                 }}>
-                Cadastrar
+                    {editandoId !== null ? 'Salvar' : 'Cadastrar'}
                 </button>
                 
             </div>
@@ -72,6 +79,14 @@ export default function Cadastro() {
                 <span>{prato.nome}</span>
                 <span>R$ {prato.preco}</span>
                 <span>{prato.tipo}</span>
+
+                <button onClick={() => {
+                    setEditandoId(prato.id)
+                    setForm({ nome: prato.nome, preco: prato.preco, tipo: prato.tipo, caracteristicas: prato.caracteristicas })
+                }}>
+                    Editar
+                </button>
+
                 <button onClick={() => setPratos(pratos.filter(p => p.id !== prato.id))}>
                     Excluir
                 </button>

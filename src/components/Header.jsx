@@ -2,7 +2,7 @@
     const abas = [
         {id: 'sugestao', label: 'Sugestão da Semana'},
         {id: 'diario', label: 'Cardápio Diário'},
-        {id: 'seleçao', label: 'Seleção de Pratos'},
+        {id: 'selecao', label: 'Seleção de Pratos' },
         {id:'cadastro', label:'Cadastro'},
     ]
 

@@ -1,0 +1,219 @@
+/* ===== CADASTRO ===== */
+
+/* Stats */
+.cad-stats {
+  display: flex;
+  align-items: stretch;
+  background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-claro) 100%);
+  border-radius: var(--radius-lg);
+  margin-bottom: 28px;
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.cad-stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 22px 16px;
+}
+
+.cad-stat-valor {
+  font-size: 38px;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.cad-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  margin-top: 5px;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.cad-stat-divider {
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+  margin: 12px 0;
+}
+
+/* Formulário */
+.cad-form-card { padding: 28px; margin-bottom: 32px; }
+
+.cad-form-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--color-border-light);
+}
+
+.cad-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+/* Fieldset de restrições */
+.cad-caract-fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 22px 0;
+}
+
+.cad-caract-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.cad-caract-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-muted);
+  background: var(--color-surface-2);
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+  user-select: none;
+  min-height: 40px;
+}
+
+.cad-caract-chip:hover {
+  border-color: var(--azul-claro);
+  color: var(--azul-escuro);
+  background: var(--color-surface-3);
+  transform: translateY(-1px);
+}
+
+.cad-caract-chip--on {
+  background: var(--azul-escuro);
+  border-color: var(--azul-escuro);
+  color: #fff;
+  box-shadow: var(--shadow-sm);
+}
+.cad-caract-chip--on:hover { background: var(--color-primary-hover); }
+
+.cad-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 2px solid var(--color-border-light);
+}
+
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* Lista */
+.cad-lista-section { }
+
+.cad-lista-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cad-lista-titulo {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.cad-filtro {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.cad-filtro-btn {
+  background: none;
+  border: 2px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  min-height: 36px;
+}
+
+.cad-filtro-btn:hover { background: var(--color-surface-2); color: var(--color-text); border-color: var(--azul-claro); }
+
+.cad-filtro-btn--ativo {
+  background: var(--azul-escuro);
+  border-color: var(--azul-escuro);
+  color: #fff;
+}
+
+.cad-lista-card { overflow: hidden; }
+
+.cad-prato-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 22px;
+  border-bottom: 1.5px solid var(--color-border-light);
+  transition: background 0.15s;
+  flex-wrap: wrap;
+}
+
+.cad-prato-row:hover { background: var(--color-surface-2); }
+.cad-prato-row--last { border-bottom: none; }
+
+.cad-prato-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  flex: 1;
+}
+
+.cad-prato-nome {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cad-prato-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.cad-prato-meta { display: flex; align-items: center; gap: 8px; flex-shrink: 0; flex-wrap: wrap; }
+
+.cad-prato-preco {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  min-width: 76px;
+  text-align: right;
+}
+
+.cad-lista-vazio {
+  padding: 32px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 15px;
+}
+
+@media (max-width: 580px) {
+  .cad-form-grid { grid-template-columns: 1fr; }
+  .cad-prato-row { flex-direction: column; align-items: flex-start; }
+  .cad-prato-meta { width: 100%; justify-content: space-between; }
+  .cad-stats { flex-direction: column; }
+  .cad-stat-divider { width: 80%; height: 1.5px; margin: 0 auto; }
+}

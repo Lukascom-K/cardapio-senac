@@ -1,0 +1,113 @@
+/* ===== HEADER ===== */
+.app-header {
+  background: linear-gradient(135deg, #0f3d6e 0%, var(--azul-escuro) 60%, var(--azul-claro) 100%);
+  box-shadow: 0 2px 12px rgba(15,61,110,0.30);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Marca */
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.header-logo-wrap {
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.12);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.20);
+}
+
+.header-title {
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.header-subtitle {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--laranja-claro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Navegação */
+.header-nav {
+  display: flex;
+  align-items: stretch;
+  flex: 1;
+  gap: 2px;
+}
+
+.nav-tab {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.68);
+  font: 600 14px/1 var(--font-sans);
+  padding: 0 18px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.18s, background 0.18s;
+  border-radius: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 44px;
+}
+
+.nav-tab-icon { font-size: 16px; }
+
+.nav-tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 8px; right: 8px;
+  height: 3px;
+  background: var(--laranja);
+  border-radius: 3px 3px 0 0;
+  transform: scaleX(0);
+  transition: transform 0.2s cubic-bezier(0.34,1.56,0.64,1);
+}
+
+.nav-tab:hover { color: #fff; background: rgba(255,255,255,0.08); }
+.nav-tab:hover::after { transform: scaleX(0.6); }
+.nav-tab--active { color: #fff; background: rgba(255,255,255,0.12); }
+.nav-tab--active::after { transform: scaleX(1); }
+
+/* Responsive */
+@media (max-width: 780px) {
+  .header-inner { flex-direction: column; align-items: flex-start; padding: 12px 16px 0; gap: 0; }
+  .header-brand { padding-bottom: 10px; }
+  .header-nav { width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .header-nav::-webkit-scrollbar { display: none; }
+  .nav-tab { padding: 0 14px; font-size: 13px; height: 44px; }
+  .nav-tab-icon { font-size: 15px; }
+}

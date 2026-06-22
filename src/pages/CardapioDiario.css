@@ -1,0 +1,181 @@
+/* ===== CARDÁPIO DIÁRIO ===== */
+
+.cd-topbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.cd-date-label {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.cd-date-picker { align-items: flex-end; }
+
+/* ── Hero ── */
+.cd-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0f3d6e 0%, var(--azul-escuro) 45%, var(--azul-claro) 100%);
+  border: none;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+
+/* Círculos decorativos */
+.cd-hero::before,
+.cd-hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+  pointer-events: none;
+}
+.cd-hero::before { width: 200px; height: 200px; top: -60px; right: -40px; }
+.cd-hero::after  { width: 120px; height: 120px; bottom: -40px; right: 80px; }
+
+.cd-hero-eyebrow { margin-bottom: 12px; }
+
+.cd-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--laranja-claro);
+  background: rgba(247,150,51,0.18);
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(247,150,51,0.35);
+}
+
+.cd-hero-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cd-hero-text { flex: 1; }
+
+.cd-hero-nome {
+  font-size: 26px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.cd-hero-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+
+.cd-hero-tipo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.20);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.cd-hero-caract-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.90);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.cd-hero-preco {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--laranja-claro);
+  flex-shrink: 0;
+  letter-spacing: -0.5px;
+}
+
+/* ── Seções ── */
+.cd-sections { display: flex; flex-direction: column; gap: 18px; }
+
+.cd-section { overflow: hidden; }
+
+.cd-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: var(--color-surface-2);
+  border-bottom: 1.5px solid var(--color-border-light);
+}
+
+.cd-section-count {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.cd-prato-list { display: flex; flex-direction: column; }
+
+.cd-prato-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px 22px;
+  border-bottom: 1.5px solid var(--color-border-light);
+  transition: background 0.15s;
+}
+.cd-prato-item:last-child { border-bottom: none; }
+.cd-prato-item:hover { background: var(--color-surface-2); }
+.cd-prato-item--destaque { background: #fffbf0; border-left: 4px solid var(--laranja); }
+
+.cd-prato-info { display: flex; flex-direction: column; gap: 6px; flex: 1; }
+
+.cd-prato-nome-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cd-prato-nome {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cd-prato-star { font-size: 14px; }
+
+.cd-prato-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+.cd-prato-preco {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  white-space: nowrap;
+}
+
+@media (max-width: 560px) {
+  .cd-topbar { flex-direction: column; align-items: flex-start; }
+  .cd-date-picker { align-items: flex-start; }
+  .cd-hero { padding: 20px 22px; }
+  .cd-hero-nome { font-size: 21px; }
+  .cd-hero-preco { font-size: 24px; }
+}

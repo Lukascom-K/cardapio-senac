@@ -1,24 +1,37 @@
- export default function Header({ telaAtiva, setTelaAtiva}) {
-    const abas = [
-        {id: 'sugestao', label: 'Sugestão da Semana'},
-        {id: 'diario', label: 'Cardápio Diário'},
-        {id: 'selecao', label: 'Seleção de Pratos' },
-        {id:'cadastro', label:'Cadastro'},
-    ]
+import './Header.css'
 
-    return (
-    <header>
-        <h1>Restaurante Senac</h1>
-        <nav>
-            {abas.map(aba => (
-                <button
-                    key={aba.id}
-                    onClick={() => setTelaAtiva(aba.id)}
-                >
-                    {aba.label}
-                </button>
-            ))}
+export default function Header({ telaAtiva, setTelaAtiva }) {
+  const abas = [
+    { id: 'diario',    label: 'Cardápio Diário',     icon: '📅' },
+    { id: 'sugestao',  label: 'Sugestão da Semana',  icon: '📋' },
+    { id: 'selecao',   label: 'Seleção de Pratos',   icon: '✅' },
+    { id: 'cadastro',  label: 'Cadastro',             icon: '📝' },
+  ]
+
+  return (
+    <header className="app-header" role="banner">
+      <div className="header-inner">
+        <div className="header-brand">
+                   <div>
+            <span className="header-title">Restaurante Senac</span>
+          </div>
+        </div>
+
+        <nav className="header-nav" role="navigation" aria-label="Navegação principal">
+          {abas.map(aba => (
+            <button
+              key={aba.id}
+              className={`nav-tab${telaAtiva === aba.id ? ' nav-tab--active' : ''}`}
+              onClick={() => setTelaAtiva(aba.id)}
+              aria-current={telaAtiva === aba.id ? 'page' : undefined}
+              aria-label={aba.label}
+            >
+              <span className="nav-tab-icon" aria-hidden="true">{aba.icon}</span>
+              <span>{aba.label}</span>
+            </button>
+          ))}
         </nav>
+      </div>
     </header>
-    )
- }
+  )
+}

@@ -1,0 +1,240 @@
+/* ===== SUGESTÃO SEMANAL ===== */
+
+.ss-container { max-width: 1100px; }
+
+/* ── Header da semana ── */
+.ss-header {
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+
+.ss-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 28px;
+  flex-wrap: wrap;
+}
+
+.ss-nav-btn span { display: inline; }
+
+.ss-week-info {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ss-week-nome {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  letter-spacing: -0.3px;
+}
+
+.ss-week-tema {
+  font-size: 13px;
+  font-weight: 700;
+  background: var(--laranja-claro);
+  color: #6a3200;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.ss-edit-btn {
+  background: none;
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 8px;
+  border-radius: var(--radius-md);
+  opacity: 0.65;
+  transition: opacity 0.15s, border-color 0.15s;
+  min-width: 36px; min-height: 36px;
+  display: flex; align-items: center; justify-content: center;
+}
+.ss-edit-btn:hover { opacity: 1; border-color: var(--azul-claro); }
+
+.ss-edit-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Horários */
+.ss-horarios {
+  display: flex;
+  border-top: 1.5px solid var(--color-border-light);
+  background: linear-gradient(to right, var(--color-surface-2), var(--color-surface));
+}
+
+.ss-horario-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-right: 1.5px solid var(--color-border-light);
+  flex-wrap: wrap;
+}
+.ss-horario-item:last-child { border-right: none; }
+
+.ss-horario-emoji { font-size: 18px; }
+
+.ss-horario-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--azul-escuro);
+}
+
+.ss-horario-hora {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* ── Grade dos dias ── */
+.ss-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.ss-dia-card {
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.18s, transform 0.15s;
+}
+.ss-dia-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.ss-dia-card--hoje {
+  border-color: var(--laranja);
+  box-shadow: 0 0 0 3px rgba(247,150,51,0.20), var(--shadow-sm);
+}
+
+.ss-dia-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px 18px 11px;
+  border-bottom: 1.5px solid var(--color-border-light);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.ss-dia-nome {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--azul-escuro);
+  display: block;
+  letter-spacing: -0.1px;
+}
+.ss-dia-nome--hoje { color: #b85500; }
+
+.ss-hoje-badge {
+  display: inline-flex;
+  margin-top: 4px;
+  background: var(--laranja);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.ss-dia-count {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background: var(--color-surface-3);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.ss-dia-vazio {
+  padding: 22px 18px;
+  font-size: 13px;
+  color: var(--color-text-light);
+  text-align: center;
+}
+
+/* Pratos dentro do dia */
+.ss-dia-pratos {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.ss-tipo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ss-tipo-badge { font-size: 11px !important; padding: 3px 9px !important; }
+
+.ss-prato {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 10px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  border: 1.5px solid transparent;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ss-prato:hover { background: var(--color-surface-3); }
+
+.ss-prato--destaque {
+  background: #fff8ee;
+  border-color: var(--laranja-claro);
+  border-left: 3px solid var(--laranja);
+}
+
+.ss-prato-nome {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1.35;
+}
+
+.ss-star { font-size: 12px; }
+
+.ss-prato-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+/* badges menores dentro dos cards de dia */
+.ss-prato-tags .badge { font-size: 11px; padding: 2px 7px; }
+
+@media (max-width: 680px) {
+  .ss-header-content { flex-direction: column; }
+  .ss-nav-btn span  { display: none; }
+  .ss-grade { grid-template-columns: 1fr; }
+  .ss-horarios { flex-direction: column; }
+  .ss-horario-item { border-right: none; border-bottom: 1.5px solid var(--color-border-light); }
+  .ss-horario-item:last-child { border-bottom: none; }
+}
